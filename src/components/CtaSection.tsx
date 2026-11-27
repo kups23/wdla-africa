@@ -18,17 +18,17 @@ export default function CtaSection() {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           <Link
             href="#register"
-            className="bg-[#F5A623] hover:bg-[#e09419] text-neutral-950 font-bold text-xs uppercase tracking-[0.08em] px-9 py-4 inline-flex items-center gap-2.5 transition-all shadow-sm"
+            className="bg-[#F5A623] hover:bg-[#e09419] text-neutral-950 font-bold text-xs uppercase tracking-[0.1em] px-8 py-3.5 rounded-md inline-flex items-center gap-2.5 transition-all shadow-md"
           >
             Register Interest
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
           <Link
             href="#partnerships"
-            className="text-xs font-bold uppercase tracking-[0.08em] text-white hover:text-[#F5A623] inline-flex items-center gap-2 transition-colors"
+            className="bg-transparent border border-white text-white hover:bg-white/10 font-bold text-xs uppercase tracking-[0.1em] px-8 py-3.5 rounded-md inline-flex items-center gap-2 transition-all"
           >
             Partner With Us
             <ArrowUpRight className="w-3.5 h-3.5" />

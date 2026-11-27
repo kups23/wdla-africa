@@ -41,51 +41,57 @@ export default function VenueSection() {
             </div>
           </div>
 
-          {/* Right Column: 4 Images in 2x2 Grid with gold border */}
+          {/* Right Column: 4 Images in Staggered Grid (not on same line on desktop) */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              {/* Hotel 01 */}
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-[#F5A623] shadow-md group">
-                <Image
-                  src="/images/hotel01.jpg"
-                  alt="Glee Hotels Exterior"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 items-start">
+              {/* Left Sub-column (starts at top) */}
+              <div className="flex flex-col gap-5 sm:gap-6">
+                {/* Hotel 01 */}
+                <div className="relative aspect-[4/4.2] rounded-[28px] overflow-hidden border-2 border-[#F5A623] shadow-md group">
+                  <Image
+                    src="/images/hotel01.jpg"
+                    alt="Glee Hotels Exterior"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+
+                {/* Hotel 03 */}
+                <div className="relative aspect-[3/4] rounded-[28px] overflow-hidden border-2 border-[#F5A623] shadow-md group">
+                  <Image
+                    src="/images/hotel03.jpg"
+                    alt="Glee Hotels Lobby Lounge"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
               </div>
 
-              {/* Hotel 02 */}
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-[#F5A623] shadow-md group">
-                <Image
-                  src="/images/hotel02.jpg"
-                  alt="Glee Hotels Conference Hall"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                />
-              </div>
+              {/* Right Sub-column (offset downwards on desktop: not on same top line) */}
+              <div className="flex flex-col gap-5 sm:gap-6 sm:mt-12 lg:mt-16">
+                {/* Hotel 02 */}
+                <div className="relative aspect-[4/4.2] rounded-[28px] overflow-hidden border-2 border-[#F5A623] shadow-md group">
+                  <Image
+                    src="/images/hotel02.jpg"
+                    alt="Glee Hotels Conference Hall"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
 
-              {/* Hotel 03 */}
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-[#F5A623] shadow-md group">
-                <Image
-                  src="/images/hotel03.jpg"
-                  alt="Glee Hotels Lobby Lounge"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                />
-              </div>
-
-              {/* Hotel 04 */}
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-[#F5A623] shadow-md group">
-                <Image
-                  src="/images/hotel04.jpg"
-                  alt="Glee Hotels Reception"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                />
+                {/* Hotel 04 */}
+                <div className="relative aspect-[3/4] rounded-[28px] overflow-hidden border-2 border-[#F5A623] shadow-md group">
+                  <Image
+                    src="/images/hotel04.jpg"
+                    alt="Glee Hotels Reception"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
               </div>
             </div>
           </div>

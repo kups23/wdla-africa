@@ -209,21 +209,21 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-14">
           <Link
             href="#register"
-            className="bg-[#F5A623] hover:bg-[#e09419] text-neutral-950 font-bold text-xs uppercase tracking-[0.08em] px-8 py-3.5 rounded-lg transition-all inline-flex items-center gap-2 shadow-lg"
+            className="bg-[#F5A623] hover:bg-[#e09419] text-neutral-950 font-bold text-xs uppercase tracking-[0.1em] px-8 py-3.5 rounded-md transition-all inline-flex items-center gap-2.5 shadow-md"
           >
             Register Interest
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
           <Link
             href="#partnerships"
-            className="border border-white/30 bg-black/40 backdrop-blur-md text-white font-bold text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-lg inline-flex items-center gap-1.5 hover:bg-white/10 transition-colors"
+            className="bg-transparent border border-white text-white hover:bg-white/10 font-bold text-xs uppercase tracking-[0.1em] px-7 py-3.5 rounded-md inline-flex items-center gap-2 transition-all"
           >
             Partner With Us
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
           <Link
             href="#solutions"
-            className="border border-white/30 bg-black/40 backdrop-blur-md text-white font-bold text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-lg inline-flex items-center gap-1.5 hover:bg-white/10 transition-colors"
+            className="bg-transparent border border-white text-white hover:bg-white/10 font-bold text-xs uppercase tracking-[0.1em] px-7 py-3.5 rounded-md inline-flex items-center gap-2 transition-all"
           >
             Apply to Exhibit
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -286,45 +286,38 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* 3. Gold Scrolling Logos Bar at Hero Bottom */}
-      <div className="relative z-10 w-full bg-[#F5A623] py-3.5 overflow-hidden shadow-inner">
-        <div className="animate-marquee flex items-center gap-12 sm:gap-16">
-          {/* First set of logos */}
-          {scrollLogos.map((logo, idx) => (
-            <div key={`logo-1-${idx}`} className="shrink-0 h-9 flex items-center">
-              <Image
-                src={logo}
-                alt="Partner Brand"
-                width={120}
-                height={36}
-                className="h-8 w-auto object-contain"
-              />
-            </div>
-          ))}
-          {/* Duplicate set for infinite seamless scroll */}
-          {scrollLogos.map((logo, idx) => (
-            <div key={`logo-2-${idx}`} className="shrink-0 h-9 flex items-center">
-              <Image
-                src={logo}
-                alt="Partner Brand"
-                width={120}
-                height={36}
-                className="h-8 w-auto object-contain"
-              />
-            </div>
-          ))}
-          {/* Triplicate set for ultra-wide screen seamless scroll */}
-          {scrollLogos.map((logo, idx) => (
-            <div key={`logo-3-${idx}`} className="shrink-0 h-9 flex items-center">
-              <Image
-                src={logo}
-                alt="Partner Brand"
-                width={120}
-                height={36}
-                className="h-8 w-auto object-contain"
-              />
-            </div>
-          ))}
+      {/* 3. Gold Scrolling Logos Bar at Hero Bottom - Infinite Unending Marquee */}
+      <div className="relative z-10 w-full bg-[#F5A623] h-16 sm:h-20 flex items-center overflow-hidden shadow-inner">
+        <div className="flex w-max animate-marquee">
+          {/* First track */}
+          <div className="flex items-center gap-16 sm:gap-20 md:gap-24 shrink-0 pr-16 sm:pr-20 md:pr-24">
+            {scrollLogos.map((logo, idx) => (
+              <div key={`track-1-${idx}`} className="h-9 sm:h-10 md:h-11 flex items-center shrink-0">
+                <Image
+                  src={logo}
+                  alt="Partner Brand"
+                  width={200}
+                  height={44}
+                  className="h-8 sm:h-9 md:h-10 w-auto max-w-[200px] object-contain filter brightness-0"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Second track for continuous unending loop */}
+          <div className="flex items-center gap-16 sm:gap-20 md:gap-24 shrink-0 pr-16 sm:pr-20 md:pr-24" aria-hidden="true">
+            {scrollLogos.map((logo, idx) => (
+              <div key={`track-2-${idx}`} className="h-9 sm:h-10 md:h-11 flex items-center shrink-0">
+                <Image
+                  src={logo}
+                  alt="Partner Brand"
+                  width={200}
+                  height={44}
+                  className="h-8 sm:h-9 md:h-10 w-auto max-w-[200px] object-contain filter brightness-0"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
