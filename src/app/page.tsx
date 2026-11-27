@@ -1,12 +1,12 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WhySection from "@/components/WhySection";
 import SignatureComponents from "@/components/SignatureComponents";
 import WhoShouldAttend from "@/components/WhoShouldAttend";
+import PartnershipSection from "@/components/PartnershipSection";
 import AgendaSection from "@/components/AgendaSection";
 import SpeakersSection from "@/components/SpeakersSection";
 import SolutionsSection from "@/components/SolutionsSection";
-import PartnershipSection from "@/components/PartnershipSection";
+import VenueSection from "@/components/VenueSection";
 import InsightsSection from "@/components/InsightsSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
@@ -14,33 +14,33 @@ import Footer from "@/components/Footer";
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* 1. Header Navigation */}
-      <Navbar />
-
       <main className="flex-1">
-        {/* 2. Hero & Summit Meta Bar */}
+        {/* 1. Hero with floating header navigation & scrolling logos banner */}
         <Hero />
 
-        {/* 3. Why Workforce DealLab Africa */}
+        {/* 2. Why Workforce DealLab Africa */}
         <WhySection />
 
-        {/* 4. Three Signature Components */}
+        {/* 3. Three Signature Components (Cards 01, 02, 03) */}
         <SignatureComponents />
 
-        {/* 5. Who Should Attend the Summit */}
+        {/* 4. Who Should Attend the Summit */}
         <WhoShouldAttend />
+
+        {/* 5. Built Through Partnership (2 rows of 5 partner logos) */}
+        <PartnershipSection />
 
         {/* 6. Three Days. One Shared Agenda */}
         <AgendaSection />
 
-        {/* 7. Meet Your Speakers */}
+        {/* 7. Meet Your Special Speakers (with back.png blur overlay & 6 cards) */}
         <SpeakersSection />
 
-        {/* 8. Discover the Solutions Shaping Africa */}
+        {/* 8. Discover the Solutions Shaping Africa's Education-to-Employment */}
         <SolutionsSection />
 
-        {/* 9. Built Through Partnership */}
-        <PartnershipSection />
+        {/* 9. Glee Hotels Nairobi, Kenya (with 2x2 grid of hotel images) */}
+        <VenueSection />
 
         {/* 10. Ideas For What Comes Next */}
         <InsightsSection />
@@ -49,7 +49,7 @@ export default function HomePage() {
         <CtaSection />
       </main>
 
-      {/* 12. Footer */}
+      {/* 12. Footer with logoupdate.png */}
       <Footer />
     </div>
   );

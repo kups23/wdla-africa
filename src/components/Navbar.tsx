@@ -10,80 +10,80 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-100 transition-all">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="w-full px-6 sm:px-8 md:px-10 lg:px-12 h-[74px] flex items-center justify-between">
         {/* Left: Brand Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/images/logo.png"
             alt="Workforce DealLab Africa"
-            width={220}
-            height={34}
+            width={235}
+            height={36}
             priority
-            className="h-8 md:h-9 w-auto object-contain"
+            className="h-8 md:h-[34px] w-auto object-contain"
           />
         </Link>
 
         {/* Center: Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
           <Link
             href="#about"
-            className="text-[12px] font-semibold uppercase tracking-wider text-neutral-800 hover:text-[#EAA228] transition-colors"
+            className="text-[13px] font-semibold uppercase tracking-[0.05em] text-neutral-900 hover:text-[#F5A623] transition-colors"
           >
             About
           </Link>
           <div className="relative group flex items-center gap-1 cursor-pointer">
             <Link
               href="#programme"
-              className="text-[12px] font-semibold uppercase tracking-wider text-neutral-800 group-hover:text-[#EAA228] transition-colors flex items-center gap-1"
+              className="text-[13px] font-semibold uppercase tracking-[0.05em] text-neutral-900 group-hover:text-[#F5A623] transition-colors flex items-center gap-1"
             >
               Programme
-              <ChevronDown className="w-3.5 h-3.5 text-neutral-600 group-hover:text-[#EAA228] transition-transform group-hover:translate-y-0.5" />
+              <ChevronDown className="w-3.5 h-3.5 text-neutral-600 group-hover:text-[#F5A623] transition-transform group-hover:translate-y-0.5" />
             </Link>
           </div>
           <Link
             href="#speakers"
-            className="text-[12px] font-semibold uppercase tracking-wider text-neutral-800 hover:text-[#EAA228] transition-colors"
+            className="text-[13px] font-semibold uppercase tracking-[0.05em] text-neutral-900 hover:text-[#F5A623] transition-colors"
           >
             Speakers
           </Link>
           <div className="relative group flex items-center gap-1 cursor-pointer">
             <Link
               href="#solutions"
-              className="text-[12px] font-semibold uppercase tracking-wider text-neutral-800 group-hover:text-[#EAA228] transition-colors flex items-center gap-1"
+              className="text-[13px] font-semibold uppercase tracking-[0.05em] text-neutral-900 group-hover:text-[#F5A623] transition-colors flex items-center gap-1"
             >
               Solutions Showcase
-              <ChevronDown className="w-3.5 h-3.5 text-neutral-600 group-hover:text-[#EAA228] transition-transform group-hover:translate-y-0.5" />
+              <ChevronDown className="w-3.5 h-3.5 text-neutral-600 group-hover:text-[#F5A623] transition-transform group-hover:translate-y-0.5" />
             </Link>
           </div>
           <div className="relative group flex items-center gap-1 cursor-pointer">
             <Link
               href="#partnerships"
-              className="text-[12px] font-semibold uppercase tracking-wider text-neutral-800 group-hover:text-[#EAA228] transition-colors flex items-center gap-1"
+              className="text-[13px] font-semibold uppercase tracking-[0.05em] text-neutral-900 group-hover:text-[#F5A623] transition-colors flex items-center gap-1"
             >
               Partnerships
-              <ChevronDown className="w-3.5 h-3.5 text-neutral-600 group-hover:text-[#EAA228] transition-transform group-hover:translate-y-0.5" />
+              <ChevronDown className="w-3.5 h-3.5 text-neutral-600 group-hover:text-[#F5A623] transition-transform group-hover:translate-y-0.5" />
             </Link>
           </div>
           <Link
             href="#insights"
-            className="text-[12px] font-semibold uppercase tracking-wider text-neutral-800 hover:text-[#EAA228] transition-colors"
+            className="text-[13px] font-semibold uppercase tracking-[0.05em] text-neutral-900 hover:text-[#F5A623] transition-colors"
           >
             Insights
           </Link>
         </nav>
 
         {/* Right Actions */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3.5">
           <Link
             href="#partnerships"
-            className="border border-neutral-900 text-neutral-900 px-5 py-2.5 text-[11px] font-bold uppercase tracking-wider hover:bg-neutral-900 hover:text-white transition-all inline-flex items-center gap-1.5"
+            className="border border-neutral-900 text-neutral-900 px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] hover:bg-neutral-900 hover:text-white transition-all inline-flex items-center gap-2"
           >
             Partner With Us
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
           <Link
             href="#register"
-            className="bg-[#EAA228] hover:bg-[#d89218] text-white px-5 py-2.5 text-[11px] font-bold uppercase tracking-wider transition-all inline-flex items-center gap-1.5 shadow-sm"
+            className="bg-[#F5A623] hover:bg-[#e09419] text-white px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] transition-all inline-flex items-center gap-2 shadow-sm"
           >
             Register Interest
             <ArrowRight className="w-3.5 h-3.5" />
@@ -93,7 +93,7 @@ export default function Navbar() {
         {/* Mobile menu toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-neutral-800 hover:text-[#EAA228] transition-colors"
+          className="lg:hidden p-2 text-neutral-800 hover:text-[#F5A623] transition-colors"
           aria-label="Toggle Menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -156,7 +156,7 @@ export default function Navbar() {
             <Link
               href="#register"
               onClick={() => setMobileMenuOpen(false)}
-              className="bg-[#EAA228] text-white text-center py-2.5 text-xs font-bold uppercase tracking-wider"
+              className="bg-[#F5A623] text-white text-center py-2.5 text-xs font-bold uppercase tracking-wider"
             >
               Register Interest →
             </Link>

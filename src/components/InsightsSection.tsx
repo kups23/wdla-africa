@@ -35,24 +35,24 @@ const insights = [
 
 export default function InsightsSection() {
   return (
-    <section id="insights" className="bg-white py-24 border-t border-neutral-200">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="insights" className="bg-white py-28 border-t border-neutral-200">
+      <div className="w-full px-6 sm:px-8 md:px-10 lg:px-12">
         {/* Top Header Row */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-neutral-900 tracking-tight">
-            Ideas for what comes next.
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-14">
+          <h2 className="text-4xl sm:text-5xl lg:text-[52px] font-extrabold text-neutral-900 tracking-tight">
+            Ideas for what comes <span className="text-[#F5A623]">next.</span>
           </h2>
           <Link
             href="#all-insights"
-            className="text-xs uppercase font-bold tracking-wider text-neutral-900 inline-flex items-center gap-1.5 border-b-2 border-neutral-900 pb-0.5 hover:text-[#EAA228] hover:border-[#EAA228] transition-all whitespace-nowrap"
+            className="text-xs uppercase font-bold tracking-[0.1em] text-neutral-900 inline-flex items-center gap-2 border-b-2 border-neutral-900 pb-1 hover:text-[#F5A623] hover:border-[#F5A623] transition-all whitespace-nowrap"
           >
             View All Insights
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        {/* 4 Article Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4 Article Cards - Fluid Full Width */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
           {insights.map((item, idx) => (
             <article key={idx} className="flex flex-col group">
               {/* Thumbnail Container */}
@@ -67,24 +67,24 @@ export default function InsightsSection() {
               </div>
 
               {/* Meta */}
-              <p className="text-[11px] font-bold text-neutral-600 tracking-wider uppercase mt-4 mb-2">
+              <p className="text-[11px] font-bold text-neutral-600 tracking-[0.1em] uppercase mt-5 mb-2.5">
                 {item.meta}
               </p>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-neutral-900 mb-2 leading-snug group-hover:text-[#EAA228] transition-colors">
+              <h3 className="text-xl font-bold text-neutral-900 mb-2.5 leading-snug group-hover:text-[#F5A623] transition-colors">
                 {item.title}
               </h3>
 
               {/* Excerpt */}
-              <p className="text-neutral-600 text-xs leading-relaxed mb-4 flex-1">
+              <p className="text-neutral-600 text-[13px] leading-relaxed mb-5 flex-1 font-normal">
                 {item.excerpt}
               </p>
 
               {/* Link */}
               <Link
                 href="#read-more"
-                className="text-xs uppercase font-bold tracking-wider text-neutral-900 inline-flex items-center gap-1 group-hover:text-[#EAA228] transition-colors self-start border-b border-neutral-900 group-hover:border-[#EAA228] pb-0.5"
+                className="text-xs uppercase font-bold tracking-[0.1em] text-neutral-900 inline-flex items-center gap-1.5 group-hover:text-[#F5A623] transition-colors self-start border-b border-neutral-900 group-hover:border-[#F5A623] pb-0.5"
               >
                 Read More
                 <ArrowRight className="w-3 h-3" />

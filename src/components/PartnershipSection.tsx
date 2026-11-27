@@ -1,81 +1,82 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const waysToPartnerRow1 = [
-  "Research and Knowledge",
-  "Education and Skills",
-  "Technology and Innovation Ecosystem",
-  "Industry and Employer",
-  "Development, Foundation and Impact",
+const partnerLogosRow1 = [
+  { src: "/images/01.png", alt: "tvdigital" },
+  { src: "/images/02.png", alt: "changes" },
+  { src: "/images/03.png", alt: "FINANCE" },
+  { src: "/images/04.png", alt: "compact" },
+  { src: "/images/05.png", alt: "Makton" },
 ];
 
-const waysToPartnerRow2 = [
-  "Public Policy and Government",
-  "Hospitality and Venue",
-  "Solutions Showcase and Exhibition",
-  "Media and Communications",
+const partnerLogosRow2 = [
+  { src: "/images/06.png", alt: "Oklae" },
+  { src: "/images/07.png", alt: "Geotel" },
+  { src: "/images/08.png", alt: "Majaeo" },
+  { src: "/images/09.png", alt: "JACKOE" },
+  { src: "/images/10.png", alt: "Versa" },
 ];
 
 export default function PartnershipSection() {
   return (
-    <section id="partnerships" className="bg-white py-24 border-t border-neutral-200 text-center">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="partnerships" className="bg-white py-28 border-t border-neutral-200 text-center">
+      <div className="w-full px-6 sm:px-8 md:px-10 lg:px-12">
         {/* Headline */}
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-neutral-900 mb-4 tracking-tight">
-          Built Through Partnership.
+        <h2 className="text-4xl sm:text-5xl lg:text-[62px] font-extrabold text-neutral-900 mb-5 tracking-tight">
+          Built Through <span className="text-[#F5A623]">Partnership</span>.
         </h2>
-        <p className="text-neutral-600 text-base max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-neutral-600 text-base md:text-lg max-w-3xl mx-auto mb-16 leading-relaxed font-normal">
           We are developing a carefully aligned group of institutional partners. Approved partners
           will be recognised here as collaborations are confirmed.
         </p>
 
-        {/* Eyebrow */}
-        <p className="text-xs uppercase tracking-widest text-neutral-500 font-semibold mb-6">
-          NINE WAYS TO PARTNER
-        </p>
-
-        {/* 9 Pill Badges */}
-        <div className="space-y-3 mb-6">
-          <div className="flex flex-wrap items-center justify-center gap-2.5">
-            {waysToPartnerRow1.map((item, idx) => (
-              <span
-                key={idx}
-                className="rounded-full border border-neutral-300 px-5 py-2 text-xs font-semibold text-neutral-800 bg-white hover:border-neutral-900 transition-colors"
-              >
-                {item}
-              </span>
+        {/* 2 Rows of 5 Partner Logos each from ui/01.png..10.png */}
+        <div className="space-y-10 sm:space-y-12 mb-16 max-w-6xl mx-auto">
+          {/* Row 1: 01 to 05 */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-12 items-center justify-items-center">
+            {partnerLogosRow1.map((logo, idx) => (
+              <div key={`row1-${idx}`} className="h-14 flex items-center justify-center p-2">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={160}
+                  height={50}
+                  className="max-h-12 w-auto object-contain hover:scale-105 transition-transform"
+                />
+              </div>
             ))}
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-2.5">
-            {waysToPartnerRow2.map((item, idx) => (
-              <span
-                key={idx}
-                className="rounded-full border border-neutral-300 px-5 py-2 text-xs font-semibold text-neutral-800 bg-white hover:border-neutral-900 transition-colors"
-              >
-                {item}
-              </span>
+
+          {/* Row 2: 06 to 10 */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-12 items-center justify-items-center">
+            {partnerLogosRow2.map((logo, idx) => (
+              <div key={`row2-${idx}`} className="h-14 flex items-center justify-center p-2">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={160}
+                  height={50}
+                  className="max-h-12 w-auto object-contain hover:scale-105 transition-transform"
+                />
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Note */}
-        <p className="text-xs text-neutral-400 font-mono tracking-wider mb-12">
-          Partners are listed here only once formally confirmed.
-        </p>
-
         {/* Partnership Opportunities Box */}
-        <div className="border border-neutral-300 p-8 sm:p-10 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-left bg-white">
+        <div className="w-full border border-neutral-300 rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-8 text-left bg-white shadow-sm">
           <div>
-            <p className="text-xs uppercase tracking-widest text-neutral-500 font-semibold mb-1">
+            <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold mb-2">
               PARTNERSHIP OPPORTUNITIES
             </p>
-            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900">
+            <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight">
               Help shape a practical continental platform.
             </h3>
           </div>
           <Link
             href="#partner-with-us"
-            className="border border-neutral-900 text-neutral-900 px-6 py-3 text-xs font-bold uppercase tracking-wider hover:bg-neutral-900 hover:text-white transition-all inline-flex items-center gap-2 whitespace-nowrap"
+            className="bg-[#F5A623] hover:bg-[#e09419] text-neutral-950 font-bold text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-lg transition-all inline-flex items-center gap-2.5 whitespace-nowrap shadow-sm"
           >
             Partner With Us
             <ArrowRight className="w-3.5 h-3.5" />

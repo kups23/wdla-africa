@@ -6,27 +6,27 @@ import { ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#081A2B] text-white pt-16 pb-12">
-      <div className="max-w-6xl mx-auto px-6">
+    <footer className="bg-[#0B1F33] text-white pt-20 pb-14">
+      <div className="w-full px-6 sm:px-8 md:px-10 lg:px-12">
         {/* Top 4-Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 mb-16">
           {/* Column 1: Brand & Details */}
           <div className="md:col-span-5">
             <Link href="/" className="inline-block">
               <Image
-                src="/images/logo-white.png"
+                src="/images/logoupdate.png"
                 alt="Workforce DealLab Africa"
-                width={200}
-                height={32}
+                width={240}
+                height={36}
                 className="h-8 w-auto object-contain"
               />
             </Link>
-            <p className="text-xs text-neutral-400 mt-6 mb-6 leading-relaxed max-w-xs">
+            <p className="text-[13px] text-neutral-400 mt-7 mb-7 leading-relaxed max-w-sm font-normal">
               A continental platform turning education-to-employment challenges into solutions,
               partnerships and impact.
             </p>
-            <p className="text-xs text-neutral-400 mb-2">An initiative convened by Nanaade</p>
-            <div className="text-xs text-neutral-400 flex items-center gap-3">
+            <p className="text-[13px] text-neutral-400 mb-2.5">An initiative convened by Nanaade</p>
+            <div className="text-[13px] text-neutral-400 flex items-center gap-3.5">
               <Link href="https://linkedin.com" target="_blank" className="hover:text-white transition-colors">
                 LinkedIn
               </Link>
@@ -43,10 +43,10 @@ export default function Footer() {
 
           {/* Column 2: Explore */}
           <div className="md:col-span-2">
-            <p className="text-xs font-bold text-[#EAA228] uppercase tracking-widest mb-4">
+            <p className="text-xs font-bold text-[#F5A623] uppercase tracking-[0.15em] mb-5">
               EXPLORE
             </p>
-            <ul className="space-y-2.5 text-xs text-neutral-300">
+            <ul className="space-y-3 text-[13px] text-neutral-300">
               <li>
                 <Link href="#home" className="hover:text-white transition-colors">
                   Home
@@ -82,10 +82,10 @@ export default function Footer() {
 
           {/* Column 3: Resources */}
           <div className="md:col-span-2">
-            <p className="text-xs font-bold text-[#EAA228] uppercase tracking-widest mb-4">
+            <p className="text-xs font-bold text-[#F5A623] uppercase tracking-[0.15em] mb-5">
               RESOURCES
             </p>
-            <ul className="space-y-2.5 text-xs text-neutral-300">
+            <ul className="space-y-3 text-[13px] text-neutral-300">
               <li>
                 <Link href="#insights" className="hover:text-white transition-colors">
                   Insights & News
@@ -116,10 +116,10 @@ export default function Footer() {
 
           {/* Column 4: Get Involved */}
           <div className="md:col-span-3">
-            <p className="text-xs font-bold text-[#EAA228] uppercase tracking-widest mb-4">
+            <p className="text-xs font-bold text-[#F5A623] uppercase tracking-[0.15em] mb-5">
               GET INVOLVED
             </p>
-            <ul className="space-y-2.5 text-xs text-neutral-300">
+            <ul className="space-y-3 text-[13px] text-neutral-300">
               <li>
                 <Link href="#register" className="hover:text-white transition-colors">
                   Register Interest
@@ -145,17 +145,19 @@ export default function Footer() {
         </div>
 
         {/* Middle Newsletter Bar */}
-        <div className="py-10 border-t border-b border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="py-12 border-t border-b border-white/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <p className="text-xs font-bold text-[#EAA228] uppercase tracking-widest mb-1">
+            <p className="text-xs font-bold text-[#F5A623] uppercase tracking-[0.15em] mb-1.5">
               STAY INFORMED
             </p>
-            <p className="text-sm text-neutral-300">Get summit news and new insights in your inbox.</p>
+            <p className="text-base text-neutral-300 font-normal">
+              Get summit news and new insights in your inbox.
+            </p>
           </div>
 
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="flex items-center border-b border-white/40 pb-1.5 w-full sm:w-80"
+            className="flex items-center border-b border-white/50 pb-2 w-full sm:w-96"
           >
             <input
               type="email"
@@ -164,7 +166,7 @@ export default function Footer() {
             />
             <button
               type="submit"
-              className="text-xs font-bold uppercase tracking-wider text-white hover:text-[#EAA228] transition-colors inline-flex items-center gap-1 whitespace-nowrap pl-2"
+              className="text-xs font-bold uppercase tracking-[0.1em] text-white hover:text-[#F5A623] transition-colors inline-flex items-center gap-1.5 whitespace-nowrap pl-3"
             >
               SUBSCRIBE
               <ArrowRight className="w-3.5 h-3.5" />
@@ -173,9 +175,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Legal / Copyright Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between text-xs text-neutral-400 gap-4">
+        <div className="pt-10 flex flex-col md:flex-row items-start md:items-center justify-between text-xs text-neutral-400 gap-5">
           <p>© 2026 Workforce DealLab Africa. All rights reserved.</p>
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-neutral-400">
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-neutral-400">
             <Link href="#privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>

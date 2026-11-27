@@ -1,97 +1,332 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import {
+  ChevronDown,
+  ArrowRight,
+  ArrowUpRight,
+  Calendar,
+  MapPin,
+  SlidersHorizontal,
+  Users,
+  Menu,
+  X,
+} from "lucide-react";
+
+const scrollLogos = [
+  "/images/scroll01.png",
+  "/images/scrool02.png",
+  "/images/scroll03.png",
+  "/images/scroll04.png",
+  "/images/scroll05.png",
+  "/images/scroll06.png",
+];
 
 export default function Hero() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <section className="bg-white pt-12 pb-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="relative w-full flex flex-col justify-between overflow-hidden">
+      {/* Hero Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/homeimage.png"
+          alt="Workforce DealLab Africa Summit Hall"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Subtle Dark Blue Overlay to match mockup */}
+        <div className="absolute inset-0 bg-[#0B1F33]/75 via-[#0B1F33]/60 to-[#0B1F33]/90" />
+      </div>
+
+      {/* 1. Transparent Header on Hero */}
+      <header className="relative z-20 w-full px-6 sm:px-8 md:px-10 lg:px-12 h-24 flex items-center justify-between">
+        {/* Left: Brand Logo */}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logoupdate.png"
+            alt="Workforce DealLab Africa"
+            width={240}
+            height={36}
+            priority
+            className="h-8 sm:h-9 w-auto object-contain"
+          />
+        </Link>
+
+        {/* Center: Navigation Links in White */}
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
+          <Link
+            href="#about"
+            className="text-[13px] font-semibold uppercase tracking-[0.05em] text-white/90 hover:text-[#F5A623] transition-colors"
+          >
+            About
+          </Link>
+          <div className="relative group flex items-center gap-1 cursor-pointer">
+            <Link
+              href="#programme"
+              className="text-[13px] font-semibold uppercase tracking-[0.05em] text-white/90 group-hover:text-[#F5A623] transition-colors flex items-center gap-1"
+            >
+              Programme
+              <ChevronDown className="w-3.5 h-3.5 text-white/70 group-hover:text-[#F5A623] transition-transform group-hover:translate-y-0.5" />
+            </Link>
+          </div>
+          <Link
+            href="#speakers"
+            className="text-[13px] font-semibold uppercase tracking-[0.05em] text-white/90 hover:text-[#F5A623] transition-colors"
+          >
+            Speakers
+          </Link>
+          <div className="relative group flex items-center gap-1 cursor-pointer">
+            <Link
+              href="#solutions"
+              className="text-[13px] font-semibold uppercase tracking-[0.05em] text-white/90 group-hover:text-[#F5A623] transition-colors flex items-center gap-1"
+            >
+              Solutions Showcase
+              <ChevronDown className="w-3.5 h-3.5 text-white/70 group-hover:text-[#F5A623] transition-transform group-hover:translate-y-0.5" />
+            </Link>
+          </div>
+          <div className="relative group flex items-center gap-1 cursor-pointer">
+            <Link
+              href="#partnerships"
+              className="text-[13px] font-semibold uppercase tracking-[0.05em] text-white/90 group-hover:text-[#F5A623] transition-colors flex items-center gap-1"
+            >
+              Partnerships
+              <ChevronDown className="w-3.5 h-3.5 text-white/70 group-hover:text-[#F5A623] transition-transform group-hover:translate-y-0.5" />
+            </Link>
+          </div>
+          <Link
+            href="#insights"
+            className="text-[13px] font-semibold uppercase tracking-[0.05em] text-white/90 hover:text-[#F5A623] transition-colors"
+          >
+            Insights
+          </Link>
+        </nav>
+
+        {/* Right Action: Register Interest */}
+        <div className="hidden md:flex items-center">
+          <Link
+            href="#register"
+            className="bg-[#F5A623] hover:bg-[#e09419] text-neutral-950 font-bold text-xs uppercase tracking-[0.08em] px-6 py-2.5 rounded-lg transition-all inline-flex items-center gap-2 shadow-md"
+          >
+            Register Interest
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        {/* Mobile menu toggle */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden p-2 text-white hover:text-[#F5A623] transition-colors"
+          aria-label="Toggle Menu"
+        >
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </header>
+
+      {/* Mobile Dropdown */}
+      {mobileMenuOpen && (
+        <div className="relative z-30 lg:hidden bg-[#0B1F33]/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 space-y-4">
+          <Link
+            href="#about"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm font-semibold uppercase tracking-wider text-white"
+          >
+            About
+          </Link>
+          <Link
+            href="#programme"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm font-semibold uppercase tracking-wider text-white"
+          >
+            Programme
+          </Link>
+          <Link
+            href="#speakers"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm font-semibold uppercase tracking-wider text-white"
+          >
+            Speakers
+          </Link>
+          <Link
+            href="#solutions"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm font-semibold uppercase tracking-wider text-white"
+          >
+            Solutions Showcase
+          </Link>
+          <Link
+            href="#partnerships"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm font-semibold uppercase tracking-wider text-white"
+          >
+            Partnerships
+          </Link>
+          <Link
+            href="#insights"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm font-semibold uppercase tracking-wider text-white"
+          >
+            Insights
+          </Link>
+          <div className="pt-4 border-t border-white/10">
+            <Link
+              href="#register"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block bg-[#F5A623] text-neutral-950 font-bold text-center py-2.5 text-xs uppercase tracking-wider rounded-lg"
+            >
+              Register Interest →
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {/* 2. Hero Center Content */}
+      <div className="relative z-10 w-full px-6 sm:px-8 md:px-10 lg:px-12 pt-12 pb-16 text-center">
         {/* Eyebrow */}
-        <p className="text-[11px] md:text-xs font-semibold tracking-[0.25em] text-neutral-700 uppercase text-center mb-6">
+        <p className="text-xs sm:text-sm font-semibold tracking-[0.25em] text-[#5AA7EE] uppercase mb-6">
           WORKFORCE DEAL LAB AFRICA
         </p>
 
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-extrabold text-neutral-900 tracking-tight text-center leading-[1.08] mb-6 max-w-5xl mx-auto uppercase">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold text-white tracking-tight leading-[1.06] mb-5 max-w-5xl mx-auto uppercase">
           THE EDUCATION-TO-EMPLOYMENT <br className="hidden sm:inline" />
           SOLUTIONS SUMMIT
         </h1>
 
         {/* Subtitles */}
-        <p className="text-xl sm:text-2xl font-bold text-neutral-900 text-center mb-3">
+        <p className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight">
           Bridging the Education-to-Employment Gap
         </p>
-        <p className="text-base sm:text-lg text-neutral-600 text-center mb-8 max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg text-neutral-200 mb-10 max-w-3xl mx-auto font-normal">
           Turning Workforce Challenges Into Solutions, Partnerships And Impact.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-14">
           <Link
             href="#register"
-            className="bg-[#EAA228] hover:bg-[#d89218] text-white px-7 py-3.5 text-xs font-bold uppercase tracking-wider transition-all inline-flex items-center gap-2 shadow-sm"
+            className="bg-[#F5A623] hover:bg-[#e09419] text-neutral-950 font-bold text-xs uppercase tracking-[0.08em] px-8 py-3.5 rounded-lg transition-all inline-flex items-center gap-2 shadow-lg"
           >
             Register Interest
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
           <Link
             href="#partnerships"
-            className="text-xs font-bold uppercase tracking-wider text-neutral-900 hover:text-[#EAA228] inline-flex items-center gap-1 transition-colors"
+            className="border border-white/30 bg-black/40 backdrop-blur-md text-white font-bold text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-lg inline-flex items-center gap-1.5 hover:bg-white/10 transition-colors"
           >
             Partner With Us
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
           <Link
             href="#solutions"
-            className="text-xs font-bold uppercase tracking-wider text-neutral-900 hover:text-[#EAA228] inline-flex items-center gap-1 transition-colors"
+            className="border border-white/30 bg-black/40 backdrop-blur-md text-white font-bold text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-lg inline-flex items-center gap-1.5 hover:bg-white/10 transition-colors"
           >
             Apply to Exhibit
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        {/* Hero Image */}
-        <div className="max-w-6xl mx-auto overflow-hidden">
-          <div className="relative w-full aspect-[16/9] max-h-[620px]">
-            <Image
-              src="/images/hero.jpg"
-              alt="Turning workforce challenges into solutions. Partnerships and impact - Workforce DealLab Africa participants"
-              fill
-              priority
-              className="object-cover object-top"
-              sizes="(max-width: 1280px) 100vw, 1200px"
-            />
+        {/* Frosted Glass Meta Details Bar */}
+        <div className="w-full max-w-5xl mx-auto bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 grid grid-cols-2 lg:grid-cols-4 gap-4 divide-y lg:divide-y-0 lg:divide-x divide-white/15 shadow-2xl text-left">
+          {/* Date */}
+          <div className="flex items-center gap-3.5 px-3 py-2">
+            <div className="w-10 h-10 rounded-xl border border-[#F5A623]/70 bg-black/30 flex items-center justify-center shrink-0">
+              <Calendar className="w-5 h-5 text-[#F5A623]" />
+            </div>
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase">
+                DATE
+              </p>
+              <p className="text-sm sm:text-base font-bold text-white">19–21 May 2027</p>
+            </div>
           </div>
-        </div>
 
-        {/* Summit Meta Details Bar */}
-        <div className="max-w-6xl mx-auto border-t border-b border-neutral-200 mt-6 grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-200 py-6 bg-white">
-          <div className="px-6 py-3">
-            <p className="text-[11px] font-bold tracking-wider text-[#0F5132] uppercase mb-1">
-              PROPOSED DATE
-            </p>
-            <p className="text-base font-bold text-neutral-900">19–21 May 2027</p>
+          {/* Location */}
+          <div className="flex items-center gap-3.5 px-3 py-2 pt-3 lg:pt-2">
+            <div className="w-10 h-10 rounded-xl border border-[#F5A623]/70 bg-black/30 flex items-center justify-center shrink-0">
+              <MapPin className="w-5 h-5 text-[#F5A623]" />
+            </div>
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase">
+                LOCATION
+              </p>
+              <p className="text-sm sm:text-base font-bold text-white">Nairobi, Kenya</p>
+            </div>
           </div>
-          <div className="px-6 py-3">
-            <p className="text-[11px] font-bold tracking-wider text-[#0F5132] uppercase mb-1">
-              PROPOSED LOCATION
-            </p>
-            <p className="text-base font-bold text-neutral-900">Nairobi, Kenya</p>
+
+          {/* Format */}
+          <div className="flex items-center gap-3.5 px-3 py-2 pt-3 lg:pt-2">
+            <div className="w-10 h-10 rounded-xl border border-[#F5A623]/70 bg-black/30 flex items-center justify-center shrink-0">
+              <SlidersHorizontal className="w-5 h-5 text-[#F5A623]" />
+            </div>
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase">
+                FORMAT
+              </p>
+              <p className="text-sm sm:text-base font-bold text-white">Three-day summit</p>
+            </div>
           </div>
-          <div className="px-6 py-3">
-            <p className="text-[11px] font-bold tracking-wider text-[#0F5132] uppercase mb-1">
-              FORMAT
-            </p>
-            <p className="text-base font-bold text-neutral-900">Three-day summit</p>
-          </div>
-          <div className="px-6 py-3">
-            <p className="text-[11px] font-bold tracking-wider text-[#0F5132] uppercase mb-1">
-              CONVENOR
-            </p>
-            <p className="text-base font-bold text-neutral-900">Nanaade</p>
+
+          {/* Convenor */}
+          <div className="flex items-center gap-3.5 px-3 py-2 pt-3 lg:pt-2">
+            <div className="w-10 h-10 rounded-xl border border-[#F5A623]/70 bg-black/30 flex items-center justify-center shrink-0">
+              <Users className="w-5 h-5 text-[#F5A623]" />
+            </div>
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.1em] text-neutral-400 uppercase">
+                CONVENOR
+              </p>
+              <p className="text-sm sm:text-base font-bold text-white">Nanaade</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* 3. Gold Scrolling Logos Bar at Hero Bottom */}
+      <div className="relative z-10 w-full bg-[#F5A623] py-3.5 overflow-hidden shadow-inner">
+        <div className="animate-marquee flex items-center gap-12 sm:gap-16">
+          {/* First set of logos */}
+          {scrollLogos.map((logo, idx) => (
+            <div key={`logo-1-${idx}`} className="shrink-0 h-9 flex items-center">
+              <Image
+                src={logo}
+                alt="Partner Brand"
+                width={120}
+                height={36}
+                className="h-8 w-auto object-contain"
+              />
+            </div>
+          ))}
+          {/* Duplicate set for infinite seamless scroll */}
+          {scrollLogos.map((logo, idx) => (
+            <div key={`logo-2-${idx}`} className="shrink-0 h-9 flex items-center">
+              <Image
+                src={logo}
+                alt="Partner Brand"
+                width={120}
+                height={36}
+                className="h-8 w-auto object-contain"
+              />
+            </div>
+          ))}
+          {/* Triplicate set for ultra-wide screen seamless scroll */}
+          {scrollLogos.map((logo, idx) => (
+            <div key={`logo-3-${idx}`} className="shrink-0 h-9 flex items-center">
+              <Image
+                src={logo}
+                alt="Partner Brand"
+                width={120}
+                height={36}
+                className="h-8 w-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

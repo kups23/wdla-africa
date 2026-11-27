@@ -3,12 +3,12 @@
 @theme {
   --font-sans: var(--font-manrope), system-ui, -apple-system, sans-serif;
   --font-manrope: var(--font-manrope);
-  --color-brand-gold: #EAA228;
-  --color-brand-gold-hover: #D89218;
-  --color-brand-navy: #081A2B;
-  --color-brand-navy-light: #132B43;
-  --color-brand-sage: #88AE9A;
-  --color-brand-cream: #F5F2EB;
+  --color-brand-gold: #F5A623;
+  --color-brand-gold-hover: #E09419;
+  --color-brand-navy: #0B1F33;
+  --color-brand-navy-card: #173B5E;
+  --color-brand-sage: #8EB7AA;
+  --color-brand-cream: #F4F1EA;
 }
 
 :root {
@@ -17,13 +17,34 @@
 
 body {
   font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
-  color: #081A2B;
+  color: #0B1F33;
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* Custom smooth scrolling */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Infinite Marquee Animation for Scrolling Logos */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
